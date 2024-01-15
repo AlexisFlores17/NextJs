@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { IoBrowsersOutline, IoCalculator, IoGameController, IoHeartOutline, IoLogoReact } from 'react-icons/io5';
+import { IoBrowsersOutline, IoCalculator, IoFootball, IoHeartOutline, IoLogoReact } from 'react-icons/io5';
 import { SidebarMenuItem } from './SidebarMenuItem';
 
 
@@ -11,22 +11,23 @@ const menuItems = [
     subTitle: 'Visualización'
   },
   {
-  path: '/dashboard/counter',
+    path: '/dashboard/counter',
     icon: <IoCalculator size={40} />,
     title: 'Counter',
     subTitle: 'Contador Client Side'
   },
   {
-  path: '/dashboard/pokemons',
-    icon: <IoGameController size={40} />,
-    title: 'Pokemon',
-    subTitle: 'Generación estatica'
-  },  {
+    path: '/dashboard/pokemons',
+    icon: <IoFootball size={40} />,
+    title: 'Pokemons',
+    subTitle: 'Generación Estática'
+  },
+  {
     path: '/dashboard/favorites',
-      icon: <IoHeartOutline size={40} />,
-      title: 'Favoritos',
-      subTitle: 'GlobalState'
-    },
+    icon: <IoHeartOutline size={40} />,
+    title: 'Favoritos',
+    subTitle: 'Global State'
+  },
 ]
 
 
@@ -57,6 +58,7 @@ export const Sidebar = () => {
               alt="User avatar" 
               width={50}
               height={50}
+              priority
             />
           </span>
           <span className="text-sm md:text-base font-bold">
