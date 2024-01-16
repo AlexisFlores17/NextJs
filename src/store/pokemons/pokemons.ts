@@ -7,8 +7,8 @@ interface PokemonsState{
 
 const initialState:PokemonsState = {
     '1':{id:'1', name:'bulbasaur'},
-    '4':{id:'1', name:'charmander'},
-    '6':{id:'1', name:'charizard'},
+    '4':{id:'4', name:'charmander'},
+    '6':{id:'6', name:'charizard'},
 }
 
 const pokemonSlice = createSlice({
@@ -17,11 +17,20 @@ const pokemonSlice = createSlice({
   reducers: {
     toggleFavorite(state, action: PayloadAction<SimplePokemon>) {
         
+        const pokemon = action.payload;
+        const {id} = pokemon;
+
+        if(!!state[id]) {
+          delete state[id];
+          return
+        }
+
+        state[id] = pokemon;
         
     }
   }
 });
 
-export const {} = pokemonSlice.actions
+export const { toggleFavorite} = pokemonSlice.actions
 
 export default pokemonSlice.reducer
